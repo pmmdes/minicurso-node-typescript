@@ -5,7 +5,7 @@ export async function up(knex: Knex) {
         table.increments('id').primary();  //id sendo chave primária e auto incremento
         table.string('name').notNullable(); //não nulo
         table.string('image').notNullable(); 
-        table.string('email').notNullable(); 
+        table.string('email').unique().notNullable(); 
         table.string('whatsapp').notNullable(); 
         table.decimal('latitude').notNullable(); 
         table.decimal('longitude').notNullable(); 

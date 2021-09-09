@@ -7,7 +7,7 @@ itemsRouter.get('/', async (request, response) => {
     
     const items = await knex('items').select('*');
 
-    //serializar informação recebida do banco
+    //serializar informação recebida do banco (tratando o url da imagem)
 
     const serializedItems = items.map(item => {
         return {
